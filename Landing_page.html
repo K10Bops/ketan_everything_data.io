@@ -11,149 +11,98 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
-:root{
---primary:#06b6d4;
---secondary:#8b5cf6;
+body{
+font-family:"Inter",sans-serif;
+background: radial-gradient(circle at 20% 20%, #0f172a, #020617);
+color:white;
 }
 
-/* ===== Mesh Gradient Hero ===== */
-
-.mesh-hero{
-
-position:relative;
-background:linear-gradient(
-135deg,
-rgba(15,23,42,0.95),
-rgba(15,23,42,0.75)
-);
-
-overflow:hidden;
-
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+border:1px solid rgba(255,255,255,0.1);
 }
 
-.mesh-hero::before{
-
-content:"";
-
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-
-background:
-
-radial-gradient(circle at 20% 30%, rgba(6,182,212,0.25), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(139,92,246,0.25), transparent 40%),
-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 60%);
-
-z-index:0;
-
-animation:meshMove 12s infinite alternate ease-in-out;
-
+.gradient-text{
+background:linear-gradient(90deg,#22d3ee,#6366f1,#a78bfa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-/* mesh animation */
-
-@keyframes meshMove{
-
-0%{
-transform:translate(0px,0px) scale(1);
+.card-hover{
+transition: all 0.4s ease;
 }
 
-100%{
-transform:translate(-40px,40px) scale(1.1);
+.card-hover:hover{
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
-
-}
-
-/* ===== Fade animation ===== */
 
 .fade-in{
-
 opacity:0;
-transform:translateY(40px);
-transition:all 1s ease;
-
+transform:translateY(30px);
+transition: all 1s ease;
 }
 
 .fade-in.visible{
-
 opacity:1;
 transform:translateY(0);
-
 }
 
-/* typewriter cursor */
-
-.typewriter{
-
-border-right:3px solid var(--primary);
-animation:blink .7s infinite;
-
-}
-
-@keyframes blink{
-
-50%{border-color:transparent;}
-
-}
-
-/* Glass nav */
-
-.glass{
-
-background:rgba(15,23,42,0.6);
-backdrop-filter:blur(12px);
-
+.tag{
+padding:6px 14px;
+border-radius:999px;
+font-size:14px;
+background:rgba(34,211,238,0.1);
+border:1px solid rgba(34,211,238,0.3);
 }
 
 </style>
 
 </head>
 
-<body class="bg-slate-950 text-white font-[Inter]">
+<body>
 
 <!-- NAVBAR -->
 
-<nav class="glass fixed top-0 w-full z-50 border-b border-slate-800">
+<nav class="fixed top-0 w-full z-50 glass">
+<div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
-<div class="max-w-6xl mx-auto px-6 py-4 flex justify-between">
-
-<div class="font-bold text-xl">
+<div class="font-bold text-xl gradient-text">
 Ketan Bopanna K.
 </div>
 
-<div class="hidden md:flex space-x-8 text-slate-300">
+<div class="space-x-6 text-slate-300">
 
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+<a href="#about" class="hover:text-cyan-400">About</a>
+<a href="#skills" class="hover:text-cyan-400">Skills</a>
+<a href="#experience" class="hover:text-cyan-400">Experience</a>
+<a href="#projects" class="hover:text-cyan-400">Projects</a>
+<a href="#education" class="hover:text-cyan-400">Education</a>
+<a href="#contact" class="hover:text-cyan-400">Contact</a>
 
 </div>
 
 </div>
-
 </nav>
 
 
 <!-- HERO -->
 
 <section id="about"
-class="mesh-hero min-h-screen flex items-center justify-center">
+class="min-h-screen flex items-center justify-center text-center px-6">
 
-<div class="relative z-10 text-center fade-in">
+<div class="fade-in">
 
 <p class="text-cyan-400 mb-4">
-Former Auditor → Data Scientist
+Consulting → Data Scientist
 </p>
 
-<h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+<h1 class="text-6xl md:text-7xl font-extrabold mb-6 gradient-text">
 
 Ketan Bopanna K.
 
@@ -161,17 +110,17 @@ Ketan Bopanna K.
 
 <h2 class="text-2xl md:text-4xl text-slate-300 mb-6">
 
-I build <span id="typewriter"
-class="text-cyan-400 typewriter pl-2"></span>
+I build <span id="typewriter" class="text-cyan-400"></span>
 
 </h2>
 
-<p class="max-w-xl mx-auto text-slate-400 mb-8">
+<p class="max-w-2xl mx-auto text-slate-400 mb-8">
 
-Former auditor turned Data Scientist specializing in machine learning,
-automation, and scalable data pipelines.
+Data Scientist specialized in Machine Learning, Predictive Modeling, and Data Pipelines. Combining audit precision with modern AI to build scalable, reliable, and impactful systems.
 
 </p>
+
+<div class="flex justify-center gap-4">
 
 <a href="#projects"
 class="px-8 py-4 bg-cyan-500 text-black font-bold rounded hover:bg-cyan-400">
@@ -180,6 +129,15 @@ View Projects
 
 </a>
 
+<a href="#contact"
+class="px-8 py-4 border border-cyan-400 rounded hover:bg-cyan-400 hover:text-black">
+
+Contact
+
+</a>
+
+</div>
+
 </div>
 
 </section>
@@ -187,63 +145,149 @@ View Projects
 
 <!-- SKILLS -->
 
-<section id="skills"
-class="py-20 max-w-6xl mx-auto px-6 fade-in">
+<section id="skills" class="py-20 max-w-6xl mx-auto px-6 fade-in">
 
-<h2 class="text-4xl font-bold mb-12 text-center">
-
-Technical Arsenal
-
+<h2 class="text-4xl font-bold mb-12 text-center gradient-text">
+Technical Skills
 </h2>
 
 <div class="grid md:grid-cols-3 gap-8">
 
-<div class="bg-slate-900 p-6 rounded-lg">
+<div class="glass p-6 rounded-lg card-hover">
 
-<i class="fas fa-brain text-cyan-400 text-3xl mb-4"></i>
-
-<h3 class="text-xl font-bold mb-2">
-Machine Learning
+<h3 class="text-xl font-bold mb-4 text-cyan-400">
+Machine Learning & AI
 </h3>
 
-<p class="text-slate-400">
+<div class="flex flex-wrap gap-2">
 
-Scikit-Learn, TensorFlow, Feature Engineering,
-Hyperparameter tuning
-
-</p>
+<span class="tag">Scikit-learn</span>
+<span class="tag">PyTorch</span>
+<span class="tag">TensorFlow</span>
+<span class="tag">Keras</span>
+<span class="tag">Random Forest</span>
+<span class="tag">RNN</span>
+<span class="tag">NLP</span>
+<span class="tag">KNN</span>
 
 </div>
 
-<div class="bg-slate-900 p-6 rounded-lg">
+</div>
 
-<i class="fas fa-database text-purple-400 text-3xl mb-4"></i>
+<div class="glass p-6 rounded-lg card-hover">
 
-<h3 class="text-xl font-bold mb-2">
+<h3 class="text-xl font-bold mb-4 text-purple-400">
 Data Engineering
 </h3>
 
-<p class="text-slate-400">
+<div class="flex flex-wrap gap-2">
 
-ETL pipelines, Spark, automation, cloud infrastructure
-
-</p>
+<span class="tag">PySpark</span>
+<span class="tag">Databricks</span>
+<span class="tag">Azure</span>
+<span class="tag">AWS</span>
+<span class="tag">MySQL</span>
+<span class="tag">ETL</span>
 
 </div>
 
-<div class="bg-slate-900 p-6 rounded-lg">
+</div>
 
-<i class="fas fa-chart-line text-green-400 text-3xl mb-4"></i>
+<div class="glass p-6 rounded-lg card-hover">
 
-<h3 class="text-xl font-bold mb-2">
-Analytics
+<h3 class="text-xl font-bold mb-4 text-green-400">
+Analytics & Visualization
 </h3>
 
-<p class="text-slate-400">
+<div class="flex flex-wrap gap-2">
 
-Python, SQL, visualization, dashboards
+<span class="tag">Python</span>
+<span class="tag">SQL</span>
+<span class="tag">Tableau</span>
+<span class="tag">Plotly</span>
+<span class="tag">Streamlit</span>
+<span class="tag">GeoPandas</span>
 
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience" class="py-20 bg-slate-900 fade-in">
+
+<div class="max-w-4xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold mb-12 text-center gradient-text">
+Experience
+</h2>
+
+<div class="space-y-8">
+
+<div class="glass p-6 rounded-lg card-hover">
+
+<h3 class="text-xl font-bold text-cyan-400">
+Data Scientist — DatumLocus
+</h3>
+
+<p class="text-slate-400 mb-2">
+Dec 2024 – May 2025 | Lille, France
 </p>
+
+<ul class="text-slate-300 list-disc ml-6 space-y-1">
+
+<li>Built automated data collection and transformation pipelines</li>
+<li>Developed cloud infrastructure on AWS & Azure</li>
+<li>Automated monitoring and log detection systems</li>
+<li>Supported production deployment pipelines</li>
+
+</ul>
+
+</div>
+
+<div class="glass p-6 rounded-lg card-hover">
+
+<h3 class="text-xl font-bold text-purple-400">
+Data Analytics Consultant — Crédit Agricole
+</h3>
+
+<p class="text-slate-400 mb-2">
+Feb 2024 – May 2024 | France
+</p>
+
+<ul class="text-slate-300 list-disc ml-6 space-y-1">
+
+<li>Built predictive model for building depreciation risk</li>
+<li>Integrated geospatial flood risk open data</li>
+<li>Developed ML models to forecast property value impact</li>
+
+</ul>
+
+</div>
+
+<div class="glass p-6 rounded-lg card-hover">
+
+<h3 class="text-xl font-bold text-green-400">
+Audit Associate — Baker Tilly
+</h3>
+
+<p class="text-slate-400 mb-2">
+2022 – 2023 | Hong Kong
+</p>
+
+<ul class="text-slate-300 list-disc ml-6 space-y-1">
+
+<li>Analyzed financial datasets and detected anomalies</li>
+<li>Strengthened data validation and compliance processes</li>
+
+</ul>
+
+</div>
 
 </div>
 
@@ -254,66 +298,47 @@ Python, SQL, visualization, dashboards
 
 <!-- PROJECTS -->
 
-<section id="projects"
-class="py-20 bg-slate-900 fade-in">
+<section id="projects" class="py-20 max-w-6xl mx-auto px-6 fade-in">
 
-<div class="max-w-6xl mx-auto px-6">
-
-<h2 class="text-4xl font-bold text-center mb-12">
-
-Projects
-
+<h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+Key Projects
 </h2>
 
 <div class="grid md:grid-cols-3 gap-8">
 
-<div class="bg-slate-800 p-6 rounded-lg hover:scale-105 transition">
+<div class="glass p-6 rounded-lg card-hover">
 
-<h3 class="text-xl font-bold mb-2">
-
-ML Prediction System
-
+<h3 class="text-xl font-bold text-cyan-400 mb-2">
+Recommender System
 </h3>
 
 <p class="text-slate-400">
-
-Built predictive ML system with automated pipeline.
-
+Built recommendation engine using ALS, SVD and KNN achieving RMSE of 1.075.
 </p>
 
 </div>
 
-<div class="bg-slate-800 p-6 rounded-lg hover:scale-105 transition">
+<div class="glass p-6 rounded-lg card-hover">
 
-<h3 class="text-xl font-bold mb-2">
-
-Data Automation Pipeline
-
+<h3 class="text-xl font-bold text-purple-400 mb-2">
+PySpark ML Pipeline
 </h3>
 
 <p class="text-slate-400">
-
-Automated extraction, cleaning, and transformation.
-
+Built scalable ML pipeline achieving 0.82 AUC and 81.5% accuracy.
 </p>
 
 </div>
 
-<div class="bg-slate-800 p-6 rounded-lg hover:scale-105 transition">
+<div class="glass p-6 rounded-lg card-hover">
 
-<h3 class="text-xl font-bold mb-2">
-
-Analytics Dashboard
-
+<h3 class="text-xl font-bold text-green-400 mb-2">
+Food Inspection Classifier
 </h3>
 
 <p class="text-slate-400">
-
-Interactive dashboard for business metrics.
-
+Random Forest model ranking 5th in competition on 40k records.
 </p>
-
-</div>
 
 </div>
 
@@ -322,25 +347,43 @@ Interactive dashboard for business metrics.
 </section>
 
 
+<!-- EDUCATION -->
+
+<section id="education" class="py-20 bg-slate-900 fade-in">
+
+<div class="max-w-4xl mx-auto px-6 text-center">
+
+<h2 class="text-4xl font-bold mb-6 gradient-text">
+Education
+</h2>
+
+<p class="text-slate-300">
+MSc Big Data Analytics — IESEG School of Management (2023–2025)
+</p>
+
+<p class="text-slate-400">
+Bachelor of Commerce — Hong Kong Baptist University
+</p>
+
+</div>
+
+</section>
+
+
 <!-- CONTACT -->
 
-<section id="contact"
-class="py-20 text-center fade-in">
+<section id="contact" class="py-20 text-center fade-in">
 
-<h2 class="text-4xl font-bold mb-6">
-
+<h2 class="text-4xl font-bold mb-6 gradient-text">
 Contact
-
 </h2>
 
 <p class="text-slate-400 mb-6">
-
-Ready for the next big endeavour.
-
+Open to Data Scientist and ML Engineer roles
 </p>
 
 <a href="mailto:your@email.com"
-class="px-8 py-4 bg-cyan-500 text-black font-bold rounded">
+class="px-8 py-4 bg-cyan-500 text-black font-bold rounded hover:bg-cyan-400">
 
 Email Me
 
@@ -358,78 +401,46 @@ Email Me
 </footer>
 
 
-<!-- JAVASCRIPT -->
-
 <script>
 
 /* Typewriter */
 
 const titles=[
-"machine learning systems.",
-"data pipelines.",
-"analytics platforms.",
-"automation tools."
+"machine learning systems",
+"predictive models",
+"data pipelines",
+"AI solutions"
 ];
 
-let i=0;
-let j=0;
-let deleting=false;
+let i=0,j=0,deleting=false;
 
 function type(){
 
 let current=titles[i];
 
-if(deleting){
+if(deleting){j--;}else{j++;}
 
-j--;
-}else{
+document.getElementById("typewriter").textContent=current.substring(0,j);
 
-j++;
-}
+if(!deleting && j==current.length){deleting=true;setTimeout(type,1500);return;}
 
-document.getElementById("typewriter").textContent=
-current.substring(0,j);
-
-if(!deleting && j==current.length){
-
-deleting=true;
-setTimeout(type,1500);
-return;
-
-}
-
-if(deleting && j==0){
-
-deleting=false;
-i=(i+1)%titles.length;
-
-}
+if(deleting && j==0){deleting=false;i=(i+1)%titles.length;}
 
 setTimeout(type,deleting?50:100);
-
 }
 
 type();
 
 
-/* Fade in on scroll */
+/* Fade in */
 
 const observer=new IntersectionObserver(entries=>{
-
 entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("visible");
-
-}
-
+if(entry.isIntersecting){entry.target.classList.add("visible");}
+});
 });
 
-});
-
-document.querySelectorAll(".fade-in")
-.forEach(el=>observer.observe(el));
+document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 
 </script>
 
